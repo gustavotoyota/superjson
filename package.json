@@ -1,5 +1,5 @@
 {
-  "version": "1.12.2",
+  "version": "1.12.4",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -33,7 +33,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "superjson",
+  "name": "@deepnotes/superjson",
   "author": {
     "name": "Simon Knott",
     "email": "info@simonknott.de",
