@@ -357,7 +357,15 @@ export const untransformValue = (
       case 'custom':
         return customRule.untransform(json, type, superJson);
       case 'typed-array':
-        return typedArrayRule.untransform(json, type, superJson);
+        if (type[1] === 'Buffer') {
+          if (typeof Buffer !== 'undefined') {
+            return Buffer.from(json);
+          } else {
+            return new Uint8Array(json);
+          }
+        } else {
+          return typedArrayRule.untransform(json, type, superJson);
+        }
       default:
         throw new Error('Unknown transformation: ' + type);
     }
